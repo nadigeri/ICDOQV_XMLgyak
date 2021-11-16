@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nevjegykartyak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="NG_nevjegykartya.xsd">
+    <nevjegykartya>
+        <nev>Nádházy Gergely</nev>
+        <ceg>
+            <nev>evoSoft</nev>
+            <cim>
+                <iranyitoszam>3535</iranyitoszam>
+                <varos>Miskolc</varos>
+                <utca>Szeles utca</utca>
+                <hazszam>4</hazszam>
+            </cim>
+            <telefonszam>0647000000</telefonszam>
+            <weblap>www.evosoft.com</weblap>
+        </ceg>
+        <beosztas>Gyakornok</beosztas>
+        <telefonszam>06302078280</telefonszam>
+        <email>nadigeri@gmail.com</email>
+    </nevjegykartya>
+
+    <nevjegykartya>
+        <nev>Kiss Miklós</nev>
+        <ceg>
+            <nev>Volánbusz Miskolc</nev>
+            <cim>
+                <iranyitoszam>3540</iranyitoszam>
+                <varos>Miskolc</varos>
+                <utca>Búza tér</utca>
+                <hazszam>11</hazszam>
+            </cim>
+            <telefonszam>0647333555</telefonszam>
+            <weblap>www.bkv.com</weblap>
+        </ceg>
+        <beosztas>Sofőr</beosztas>
+        <telefonszam>06209864893</telefonszam>
+        <email>kiss_m12@gmail.com</email>
+    </nevjegykartya>
+</nevjegykartyak>

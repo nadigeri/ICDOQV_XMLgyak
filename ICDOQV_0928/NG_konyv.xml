@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE konyvek SYSTEM "NG_konyv.dtd">
+<konyvek>
+	<konyv id="1" >
+		<cim>Clean Code</cim>
+		<kiadasiev>2008. augusztus 1.</kiadasiev>
+		<kiado>Robert C. Martin</kiado>
+		<szerzo>Robert C. Martin</szerzo>
+        <abstract>Book for coding.</abstract>
+	</konyv>
+	
+	<konyv id="2" >
+		<cim>Clean Architecture</cim>
+		<kiadasiev>2017</kiadasiev>
+		<kiado>Robert C. Martin</kiado>
+		<szerzo>Robert C. Martin</szerzo>
+	</konyv>
+</konyvek>
