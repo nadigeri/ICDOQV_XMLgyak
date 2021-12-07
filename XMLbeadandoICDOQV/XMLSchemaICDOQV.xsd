@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="futar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="futar" maxOccurs="unbounded" type="ftype"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ftype">
+        <xs:sequence>
+                <xs:element name="nev" type="xs:string" maxOccurs="1"/>
+                <xs:element name="telefonszam" type="xs:int" maxOccurs="1"/>
+                <xs:element name="futarid" type="xs:int" maxOccurs="1"/>
+                <xs:element name="etteremid" id="eid" maxOccurs="1"/>
+            <xs:element name="etterem" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="etterem" type="etype" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="fid" type="xs:ID"/>
+    </xs:complexType>
+
+    <xs:complexType name="etype">
+        <xs:sequence>
+            <xs:element name="eid" type="xs:int" maxOccurs="unbounded"/>
+            <xs:element name="nev" type="xs:string" maxOccurs="1"/>
+            <xs:element name="nyitvatartas" type="xs:string" maxOccurs="1"/>
+            <xs:element name="elerhetoseg" type="elertype" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

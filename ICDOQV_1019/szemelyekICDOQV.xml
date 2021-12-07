@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE szemelyek SYSTEM "szemelyekHLO5ZK.dtd">
+-->
+
+<szemelyek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="szemelyekICDOQV.xsd">
+    <szemely id="01">
+        <nev>Nádházy Gergely</nev>
+        <kor>21</kor>
+        <varos>Eger</varos>
+    </szemely>
+
+    <szemely id="02">
+        <nev>Kiss Miklós</nev>
+        <kor>18</kor>
+        <varos>Sajószöged</varos>
+    </szemely>
+
+    <szemely id="03">
+        <nev>Kovács István</nev>
+        <kor>30</kor>
+        <varos>Emőd</varos>
+    </szemely>
+</szemelyek>

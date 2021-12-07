@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XMLSchemaICDOQV.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<etelrendeles>
+    <bankkartyak>
+        <bankkartya K_ID="1">
+            <kartyaszam>5321804176549876</kartyaszam>
+            <lejarat>08/23</lejarat>
+            <bank>OTP Bank</bank>
+            <tipus>Junior</tipus>
+        </bankkartya>
+        <bankkartya K_ID="2">
+            <kartyaszam>6543778237610094</kartyaszam>
+            <lejarat>11/22</lejarat>
+            <bank>Erste Bank</bank>
+            <tipus>Jump</tipus>
+        </bankkartya>
+        <bankkartya K_ID="3">
+            <kartyaszam>5321804198812560</kartyaszam>
+            <lejarat>04/23</lejarat>
+            <bank>OTP Bank</bank>
+            <tipus>Hitel</tipus>
+        </bankkartya>
+    </bankkartyak>
+    
+    <vevok>
+        <vevo V_ID="1" K_IDREF="3" R_IDREF="5">
+            <nev>Sirankó Boldizsár</nev>
+            <cim>
+                <iranyitoszam>9432</iranyitoszam>
+                <varos>Kaposvár</varos>
+                <utca>Dózsa György utca</utca>
+                <hazszam>32</hazszam>
+            </cim>
+            <telefonszam>06303658765</telefonszam>
+        </vevo>
+        <vevo V_ID="2" K_IDREF="1" R_IDREF="3">
+            <nev>Timkó Attila</nev>
+            <cim>
+                <iranyitoszam>4500</iranyitoszam>
+                <varos>Ózd</varos>
+                <utca>Bánya út</utca>
+                <hazszam>45</hazszam>
+            </cim>
+            <telefonszam>06307629813</telefonszam>
+        </vevo>
+        <vevo V_ID="3" K_IDREF="2" R_IDREF="1">
+            <nev>Szabó Zoltán</nev>
+            <cim>
+                <iranyitoszam>7640</iranyitoszam>
+                <varos>Hajdúnánás</varos>
+                <utca>Mező utca</utca>
+                <hazszam>2</hazszam>
+            </cim>
+            <telefonszam>06709463371</telefonszam>
+        </vevo>
+    </vevok>
+    
+    <rendelesek>
+        <rendeles R_ID="1" V_IDREF="2" E_IDREF="1">
+            <ar>2690</ar>
+            <ido>11:32</ido>
+        </rendeles>
+        <rendeles R_ID="2" V_IDREF="1" E_IDREF="2">
+            <ar>9990</ar>
+            <ido>13:52</ido>
+        </rendeles>
+        <rendeles R_ID="3" V_IDREF="3" E_IDREF="1">
+            <ar>3450</ar>
+            <ido>14:14</ido>
+        </rendeles>
+        <rendeles R_ID="4" V_IDREF="2" E_IDREF="3">
+            <ar>10550</ar>
+            <ido>15:22</ido>
+        </rendeles>
+        <rendeles R_ID="5" V_IDREF="1" E_IDREF="3">
+            <ar>5490</ar>
+            <ido>16:32</ido>
+        </rendeles>
+    </rendelesek>
+    
+    <ettermek>
+        <etterem E_ID="1" F_IDREF="1">
+            <nev>Bitang Joe Burgerbár</nev>
+            <nyitvatartas>10:00-23:00</nyitvatartas>
+            <elerhetoseg>
+                <weboldal>www.bitangjoe.hu</weboldal>
+                <telefonszam>+4630367876</telefonszam>
+            </elerhetoseg>
+        </etterem>
+        <etterem E_ID="2" F_IDREF="3">
+            <nev>Pizza, kávé világbéke</nev>
+            <nyitvatartas>8:00-22:00</nyitvatartas>
+            <elerhetoseg>
+                <weboldal>www.vilagbeke.hu</weboldal>
+                <telefonszam>+4630654987</telefonszam>
+            </elerhetoseg>
+        </etterem>
+        <etterem E_ID="3" F_IDREF="2">
+            <nev>Pizza, Kávé Világbéke</nev>
+            <nyitvatartas>8:00-22:00</nyitvatartas>
+            <elerhetoseg>
+                <weboldal>www.vilagbeke.hu</weboldal>
+                <telefonszam>+4630654987</telefonszam>
+            </elerhetoseg>
+        </etterem>
+    </ettermek>
+    
+    <futarok>
+        <futar F_ID="1" E_IDREF="2">
+            <nev>Kiss Miklós</nev>
+            <telefonszam>+36207652245</telefonszam>
+        </futar>
+        <futar F_ID="2" E_IDREF="1">
+            <nev>Nagy Máté</nev>
+            <telefonszam>+36303873378</telefonszam>
+        </futar>
+        <futar F_ID="3" E_IDREF="3">
+            <nev>Kovács András</nev>
+            <telefonszam>+36303873378</telefonszam>
+        </futar>
+        <futar F_ID="4" E_IDREF="3">
+            <nev>Takács Zoltán</nev>
+            <telefonszam>+36207652245</telefonszam>
+        </futar>
+        <futar F_ID="5" E_IDREF="2">
+            <nev>Nagy Ervin</nev>
+            <telefonszam>+36303873378</telefonszam>
+        </futar>
+        <futar F_ID="6" E_IDREF="1">
+            <nev>Ötvös Ádám</nev>
+            <telefonszam>+36303873378</telefonszam>
+        </futar>
+    </futarok>
+</etelrendeles>
