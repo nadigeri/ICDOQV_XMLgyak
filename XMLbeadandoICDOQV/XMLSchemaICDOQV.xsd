@@ -1,37 +1,219 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="futar">
+
+    <xs:element name="kartyaszam" type="xs:integer"/>
+    <xs:element name="lejarat" type="xs:string"/>
+    <xs:element name="bank" type="xs:string"/>
+    <xs:element name="tipus" type="xs:string"/>
+    <xs:element name="nev" type="xs:string"/>
+    <xs:element name="iranyitoszam" type="xs:integer"/>
+    <xs:element name="varos" type="xs:string"/>
+    <xs:element name="utca" type="xs:string"/>
+    <xs:element name="hazszam" type="xs:integer"/>
+    <xs:element name="telefonszam" type="xs:integer"/>
+    <xs:element name="ido" type="xs:string"/>
+    <xs:element name="ar" type="xs:integer"/>
+    <xs:element name="nyitvatartas" type="xs:string"/>
+    <xs:element name="weboldal" type="xs:string"/>
+    <xs:element name="mikor" type="xs:string"/>
+    <xs:element name="mivel" type="xs:string"/>
+
+
+    <xs:attribute name="K_ID" type="xs:integer"/>
+    <xs:attribute name="K_IDREF" type="xs:integer"/>
+    <xs:attribute name="V_ID" type="xs:integer"/>
+    <xs:attribute name="V_IDREF" type="xs:integer"/>
+    <xs:attribute name="R_ID" type="xs:integer"/>
+    <xs:attribute name="R_IDREF" type="xs:integer"/>
+    <xs:attribute name="E_ID" type="xs:integer"/>
+    <xs:attribute name="E_IDREF" type="xs:integer"/>
+    <xs:attribute name="F_ID" type="xs:integer"/>
+    <xs:attribute name="F_IDREF" type="xs:integer"/>
+
+    <xs:complexType name="cimtype">
+        <xs:sequence>
+            <xs:element ref="iranyitoszam"/>
+            <xs:element ref="varos"/>
+            <xs:element ref="utca"/>
+            <xs:element ref="hazszam"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="elerhetosegtype">
+        <xs:sequence>
+            <xs:element ref="weboldal"/>
+            <xs:element ref="telefonszam"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dolgoziktype">
+        <xs:sequence>
+            <xs:element ref="mikor"/>
+            <xs:element ref="mivel"/>
+        </xs:sequence>
+        <xs:attribute ref="E_IDREF" use="required"/>
+        <xs:attribute ref="F_IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="bankkartyatype">
+        <xs:sequence>
+            <xs:element ref="kartyaszam"/>
+            <xs:element ref="lejarat"/>
+            <xs:element ref="bank"/>
+            <xs:element ref="tipus"/>
+        </xs:sequence>
+        <xs:attribute ref="K_ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="vevotype">
+        <xs:sequence>
+            <xs:element ref="nev"/>
+            <xs:element name="cim" type="cimtype" maxOccurs="1"/>
+            <xs:element ref="telefonszam"/>
+        </xs:sequence>
+        <xs:attribute ref="V_ID" use="required"/>
+        <xs:attribute ref="K_IDREF" use="required"/>
+        <xs:attribute ref="R_IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="rendelestype">
+        <xs:sequence>
+            <xs:element ref="ar"/>
+            <xs:element ref="ido"/>
+        </xs:sequence>
+        <xs:attribute ref="R_ID" use="required"/>
+        <xs:attribute ref="V_IDREF" use="required"/>
+        <xs:attribute ref="E_IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="etteremtype">
+        <xs:sequence>
+            <xs:element ref="nev"/>
+            <xs:element ref="nyitvatartas"/>
+            <xs:element name="elerhetoseg" type="elerhetosegtype" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute ref="E_ID" use="required"/>
+        <xs:attribute ref="F_IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="futartype">
+        <xs:sequence>
+            <xs:element ref="nev"/>
+            <xs:element ref="telefonszam"/>
+        </xs:sequence>
+        <xs:attribute ref="F_ID" use="required"/>
+        <xs:attribute ref="E_IDREF" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="bankkartyaktype">
+        <xs:sequence>
+            <xs:element name="bankkartya" type="bankkartyatype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vevoktype">
+        <xs:sequence>
+            <xs:element name="vevo" type="vevotype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rendelesektype">
+        <xs:sequence>
+            <xs:element name="rendeles" type="rendelestype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ettermektype">
+        <xs:sequence>
+            <xs:element name="etterem" type="etteremtype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="futaroktype">
+        <xs:sequence>
+            <xs:element name="futar" type="futartype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dolgoznitype">
+        <xs:sequence>
+            <xs:element name="dolgozik" type="dolgoziktype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="etelrendeles">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="futar" maxOccurs="unbounded" type="ftype"/>
+                <xs:element name="bankkartyak" type="bankkartyaktype"/>
+                <xs:element name="vevok" type="vevoktype"/>
+                <xs:element name="rendelesek" type="rendelesektype"/>
+                <xs:element name="ettermek" type="ettermektype"/>
+                <xs:element name="futarok" type="futaroktype"/>
+                <xs:element name="dolgozni" type="dolgoznitype"/>
             </xs:sequence>
         </xs:complexType>
+
+        <xs:key name="K_ID">
+            <xs:selector xpath="bankkartyak/bankkartya"/>
+                <xs:field xpath="@K_ID"/>
+        </xs:key>
+
+        <xs:key name="V_ID">
+            <xs:selector xpath="vevok/vevo"/>
+                <xs:field xpath="@V_ID"/>
+        </xs:key>
+
+        <xs:key name="R_ID">
+            <xs:selector xpath="rendelesek/rendeles"/>
+                <xs:field xpath="@R_ID"/>
+        </xs:key>
+
+        <xs:key name="E_ID">
+            <xs:selector xpath="ettermek/etterem"/>
+                <xs:field xpath="@E_ID"/>
+        </xs:key>
+
+        <xs:key name="F_ID">
+            <xs:selector xpath="futarok/futar"/>
+                <xs:field xpath="@F_ID"/>
+        </xs:key>
+
+        <xs:keyref name="VevoFK1" refer="V_ID">
+            <xs:selector xpath="bankkartyak/bankkartya"/>
+                <xs:field xpath="@V_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="VevoFK2" refer="V_ID">
+            <xs:selector xpath="rendelesek/rendeles"/>
+                <xs:field xpath="@V_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="RendelesFK1" refer="R_ID">
+            <xs:selector xpath="bankkartyak/bankkartya"/>
+                <xs:field xpath="@R_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="RendelesFK2" refer="R_ID">
+            <xs:selector xpath="vevok/vevo"/>
+                <xs:field xpath="@R_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="EtteremFK1" refer="V_ID">
+            <xs:selector xpath="rendelesek/rendeles"/>
+                <xs:field xpath="@E_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="EtteremFK2" refer="V_ID">
+            <xs:selector xpath="futarok/futar"/>
+                <xs:field xpath="@E_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="DolgozikFK1" refer="V_ID">
+            <xs:selector xpath="futarok/futar"/>
+                <xs:field xpath="@D_IDREF"/>
+        </xs:keyref>
+        <xs:keyref name="DolgozikFK2" refer="V_ID">
+            <xs:selector xpath="ettermek/etterem"/>
+                <xs:field xpath="@D_IDREF"/>
+        </xs:keyref>
     </xs:element>
 
-    <xs:complexType name="ftype">
-        <xs:sequence>
-                <xs:element name="nev" type="xs:string" maxOccurs="1"/>
-                <xs:element name="telefonszam" type="xs:int" maxOccurs="1"/>
-                <xs:element name="futarid" type="xs:int" maxOccurs="1"/>
-                <xs:element name="etteremid" id="eid" maxOccurs="1"/>
-            <xs:element name="etterem" maxOccurs="1">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="etterem" type="etype" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-        <xs:attribute name="fid" type="xs:ID"/>
-    </xs:complexType>
-
-    <xs:complexType name="etype">
-        <xs:sequence>
-            <xs:element name="eid" type="xs:int" maxOccurs="unbounded"/>
-            <xs:element name="nev" type="xs:string" maxOccurs="1"/>
-            <xs:element name="nyitvatartas" type="xs:string" maxOccurs="1"/>
-            <xs:element name="elerhetoseg" type="elertype" maxOccurs="1"/>
-        </xs:sequence>
-    </xs:complexType>
+    
 </xs:schema>

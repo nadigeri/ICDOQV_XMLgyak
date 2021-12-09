@@ -132,4 +132,31 @@
             <telefonszam>+36303873378</telefonszam>
         </futar>
     </futarok>
+
+    <dolgozni>
+        <dolgozik E_IDREF="1" F_IDREF="1">
+            <mikor>16:00-23:00</mikor>
+            <mivel>Fiat Punto</mivel>
+        </dolgozik>
+        <dolgozik E_IDREF="2" F_IDREF="2">
+            <mikor>12:00-22:00</mikor>
+            <mivel>Suzuki Swift</mivel>
+        </dolgozik>
+        <dolgozik E_IDREF="1" F_IDREF="3">
+            <mikor>10:00-18:00</mikor>
+            <mivel>Skoda Fabia</mivel>
+        </dolgozik>
+        <dolgozik E_IDREF="3" F_IDREF="4">
+            <mikor>11:00-23:00</mikor>
+            <mivel>Suzuki Ignis</mivel>
+        </dolgozik>
+        <dolgozik E_IDREF="1" F_IDREF="5">
+            <mikor>14:00-22:00</mikor>
+            <mivel>Suzuki Ignis</mivel>
+        </dolgozik>
+        <dolgozik E_IDREF="2" F_IDREF="6">
+            <mikor>15:00-20:00</mikor>
+            <mivel>Suzuki Swift</mivel>
+        </dolgozik>
+    </dolgozni>
 </etelrendeles>
